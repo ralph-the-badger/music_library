@@ -1,0 +1,23 @@
+    <%- include("./includes/head.ejs") %>
+    <link rel="stylesheet" href="/css/form.css"> 
+  </head>
+
+  <body>
+    <%- include("./includes/navigation.ejs") %>
+    <div class="container">
+      <div class="form-container row m-auto">
+        <h1>Neue Folge hinzufügen</h1>
+        <form action="/neue-folge" method="post">
+          <label for="episodeTitle">Albumtitel</label>
+          <input type="text" name="episodeTitle" id="episodeTitle">
+          <label for="episodeNumber">Folge</label>
+          <input type="text" name="episodeNumber" id="episodeNumber">
+          <label for="episodeImage">Titelbild</label>
+          <input type="text" name="episodeImage" id="episodeImage">
+          <button type="submit" class="btn btn-dark">Folge hinzufügen</button>
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>

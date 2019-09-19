@@ -7,6 +7,10 @@ const adminController = require("../controllers/admin");
 // use Router()-method of express
 const router = express.Router();
 
+router.get("/folge-hinzufuegen", adminController.getAddEpisode);
+
+router.post("/neue-folge", adminController.postAddEpisode);
+
 // use router functionality to get homepage and to render the view home.ejs
 router.get("/", adminController.getHome);
 
