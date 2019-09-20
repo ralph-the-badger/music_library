@@ -7,6 +7,7 @@ const adminController = require("../controllers/admin");
 // use Router()-method of express
 const router = express.Router();
 
+// use router functionality to render /folge-hinzufuegen page
 router.get("/folge-hinzufuegen", adminController.getAddEpisode);
 
 router.post("/neue-folge", adminController.postAddEpisode);
