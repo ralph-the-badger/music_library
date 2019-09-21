@@ -1,6 +1,9 @@
 // require express
 const express = require("express");
 
+// require Episode-Model
+const Episode = require("../models/admin");
+
 // middleware functionality to render home page
 exports.getHome = (req, res, next) => {
   res.render("home");
@@ -16,5 +19,7 @@ exports.postAddEpisode = (req, res, next) => {
   const episodeTitle = req.body.episodeTitle;
   const episodeNumber = req.body.episodeNumber;
   const episodeImage = req.body.episodeImage;
+  const episode = new Episode(episodeTitle, episodeNumber, episodeImage);
+  episode.save();
   res.redirect("/");
 };
