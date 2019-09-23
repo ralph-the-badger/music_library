@@ -11,7 +11,7 @@ exports.getHome = (req, res, next) => {
 
 // middleware functionality to render add episode
 exports.getAddEpisode = (req, res, next) => {
-  res.render("add-album");
+  res.render("add-episode");
 };
 
 // middleware functionality to retrieve episode info from form
@@ -22,4 +22,14 @@ exports.postAddEpisode = (req, res, next) => {
   const episode = new Episode(episodeTitle, episodeNumber, episodeImage);
   episode.save();
   res.redirect("/");
+};
+
+exports.renderEpisodes = (req, res, next) => {
+  const epData = Episode.fetchData();
+  const nice = {
+    pageTitle: "Startseite",
+    path: "/",
+    ep: epData
+  };
+  res.render("home", nice);
 };

@@ -1,16 +1,14 @@
 const path = require("path");
 const fs = require("fs");
-const util = require("util");
 
+// define path to JSON-file
 const filePath = path.join(
   path.dirname("process.mainModule.filename"),
   "data",
   "episodes.json"
 );
 
-// const readFile = util.promisify(fs.readFile);
-// const writeFile = util.promisify(fs.writeFile);
-
+// return promise to read data from JSON
 function read() {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, (err, fileContent) => {
@@ -23,6 +21,7 @@ function read() {
   });
 }
 
+// return promise to save data in JSON
 function write(fileContent) {
   return new Promise((resolve, reject) => {
     fs.writeFile(filePath, JSON.stringify(fileContent), err => {
@@ -35,6 +34,7 @@ function write(fileContent) {
   });
 }
 
+// define Episode model
 module.exports = class Episode {
   constructor(epTitle, epNr, epImg) {
     this.title = epTitle;
@@ -42,19 +42,30 @@ module.exports = class Episode {
     this.img = epImg;
   }
   save() {
-    // read file content if data is already included
+    // declaration of asynchronous function
     (async () => {
+      // awaiting promise to resolve read data
       const originalContent = await read();
       console.log(originalContent);
 
-      await write(["Hallo"]);
+      // using spread operator to declare new variable
+      const lala = [...originalContent];
 
+      // 'this' refers to the three constructor parameters
+      lala.push(this);
+
+      // awaiting promise to resolve written data
+      await write(lala);
+
+      // awaiting promise to resolve read data
       const updatedContent = await read();
       console.log(updatedContent);
     })();
-    // as soon data has been read, push new data to array
-    // episodes.push(this);
-    // // overwrite array with new data
-    // fs.writeFile(filePath, JSON.stringify(episodes), err => console.log(err));
+  }
+  static fetchData() {
+    (async () => {
+      const storedData = await read();
+      // console.log(storedData);
+    })();
   }
 };
