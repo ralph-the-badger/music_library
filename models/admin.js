@@ -41,31 +41,26 @@ module.exports = class Episode {
     this.episodeNr = epNr;
     this.img = epImg;
   }
-  save() {
-    // declaration of asynchronous function
-    (async () => {
-      // awaiting promise to resolve read data
-      const originalContent = await read();
-      console.log(originalContent);
+  async save() {
+    // awaiting promise to resolve read data
+    const originalContent = await read();
+    console.log(originalContent);
 
-      // using spread operator to declare new variable
-      const lala = [...originalContent];
+    // using spread operator to declare new variable
+    const lala = [...originalContent];
 
-      // 'this' refers to the three constructor parameters
-      lala.push(this);
+    // 'this' refers to the three constructor parameters
+    lala.push(this);
 
-      // awaiting promise to resolve written data
-      await write(lala);
+    // awaiting promise to resolve written data
+    await write(lala);
 
-      // awaiting promise to resolve read data
-      const updatedContent = await read();
-      console.log(updatedContent);
-    })();
+    // awaiting promise to resolve read data
+    const updatedContent = await read();
+    console.log(updatedContent);
   }
-  static fetchData() {
-    (async () => {
-      const storedData = await read();
-      // console.log(storedData);
-    })();
+  static async fetchData() {
+    const storedData = await read();
+    return storedData;
   }
 };
