@@ -57,10 +57,36 @@ module.exports = class Episode {
 
     // awaiting promise to resolve read data
     const updatedContent = await read();
-    console.log(updatedContent);
+    // console.log(updatedContent);
   }
   static async fetchData() {
     const storedData = await read();
     return storedData;
   }
 };
+
+// neue Asynchrone Funktion
+async function readData() {
+  const blabla = await readMyFile();
+  console.log("meine Daten: " + blabla);
+}
+
+function readMyFile() {
+  return new Promise((resolve, reject) => {
+    let test = "Hier könnte auch Ihre Werbung stehen!";
+    // fs.readFile(filePath, (err, fileContent) => {
+    //   if (err) {
+    //     console.log("Error reading file from disk:", err);
+    //     return;
+    //   } else {
+    //     return JSON.parse(fileContent);
+    //     console.log("Episode:", episode);
+    //   }
+    // });
+    resolve(test);
+  });
+}
+
+const ralph = readData();
+
+console.log(ralph);

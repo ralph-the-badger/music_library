@@ -25,7 +25,7 @@ exports.postAddEpisode = (req, res, next) => {
 };
 
 exports.renderEpisodes = (req, res, next) => {
-  const epData = Episode.fetchData(await read());
+  const epData = Episode.fetchData();
   console.log(epData);
   const nice = {
     pageTitle: "Startseite",
