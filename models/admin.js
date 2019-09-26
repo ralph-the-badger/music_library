@@ -74,7 +74,7 @@ async function readData() {
 function readMyFile() {
   return new Promise((resolve, reject) => {
     let test = "Hier könnte auch Ihre Werbung stehen!";
-    // fs.readFile(filePath, (err, fileContent) => {
+    // let test = fs.readFile(filePath, (err, fileContent) => {
     //   if (err) {
     //     console.log("Error reading file from disk:", err);
     //     return;
