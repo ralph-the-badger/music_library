@@ -8,11 +8,18 @@ const filePath = path.join(
   "episodes.json"
 );
 
-// define Episode model
-module.exports = class Episode {
-  constructor(epTitle, epNr, epImg) {
-    this.title = epTitle;
-    this.episodeNr = epNr;
-    this.img = epImg;
-  }
-};
+// // define Episode model
+// module.exports = class Episode {
+//   constructor(epTitle, epNr, epImg) {
+//     this.title = epTitle;
+//     this.episodeNr = epNr;
+//     this.img = epImg;
+//   }
+// };
+
+// fs.readFile("filePath", function(err, data) {
+//   if (err) return console.error(err);
+//   console.log(data.toString());
+// });
+
+// console.log("That's Callback.");

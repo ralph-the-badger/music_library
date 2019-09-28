@@ -26,11 +26,11 @@ exports.postAddEpisode = (req, res, next) => {
 
 exports.renderEpisodes = (req, res, next) => {
   const epData = Episode.fetchData();
-  console.log(epData);
-  const nice = {
+
+  const episodesCallback = {
     pageTitle: "Startseite",
     path: "/",
     ep: epData
   };
-  res.render("home", nice);
+  res.render("home", episodesCallback);
 };

@@ -44,7 +44,7 @@ module.exports = class Episode {
   async save() {
     // awaiting promise to resolve read data
     const originalContent = await read();
-    console.log(originalContent);
+    // console.log(originalContent);
 
     // using spread operator to declare new variable
     const lala = [...originalContent];
@@ -59,34 +59,60 @@ module.exports = class Episode {
     const updatedContent = await read();
     // console.log(updatedContent);
   }
-  static async fetchData() {
-    const storedData = await read();
-    return storedData;
+  async fetchData() {
+    await read();
   }
+  // static async run() {
+  //   const res = await readFile(filePath);
+  //   return res;
+  // }
 };
 
 // neue Asynchrone Funktion
-async function readData() {
-  const blabla = await readMyFile();
-  console.log("meine Daten: " + blabla);
-}
+// async function readData() {
+//   const blabla = await readMyFile();
+//   console.log("meine Daten: " + blabla);
+// }
 
-function readMyFile() {
-  return new Promise((resolve, reject) => {
-    let test = "Hier könnte auch Ihre Werbung stehen!";
-    // let test = fs.readFile(filePath, (err, fileContent) => {
-    //   if (err) {
-    //     console.log("Error reading file from disk:", err);
-    //     return;
-    //   } else {
-    //     return JSON.parse(fileContent);
-    //     console.log("Episode:", episode);
-    //   }
-    // });
-    resolve(test);
-  });
-}
+// function readMyFile() {
+//   return new Promise((resolve, reject) => {
+//     let test = "Hier könnte auch Ihre Werbung stehen!";
+//     // let test = fs.readFile(filePath, (err, fileContent) => {
+//     //   if (err) {
+//     //     console.log("Error reading file from disk:", err);
+//     //     return;
+//     //   } else {
+//     //     return JSON.parse(fileContent);
+//     //     console.log("Episode:", episode);
+//     //   }
+//     // });
+//     resolve(test);
+//   });
+// }
 
-const ralph = readData();
+// const ralph = readData();
 
-console.log(ralph);
+// console.log(ralph);
+
+// const readFile = (filePath, opts = "utf8") =>
+//   new Promise((resolve, reject) => {
+//     fs.readFile(filePath, opts, (err, data) => {
+//       if (err) reject(err);
+//       else resolve(data);
+//     });
+//   });
+
+// // const writeFile = (path, data, opts = 'utf8') =>
+// //   new Promise((resolve, reject) => {
+// //     fs.writeFile(path, data, opts, (err) => {
+// //       if (err) reject(err)
+// //       else resolve()
+// //     })
+// //   })
+
+// const write = async () => {
+//   const res = await readFile(filePath);
+//   console.log(res);
+// };
+
+// run();
