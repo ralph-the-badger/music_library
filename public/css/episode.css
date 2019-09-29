@@ -1,0 +1,28 @@
+/* .cirledNumber {
+  display: inline-block;
+  border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  width: 1em;
+  height: 1em;
+  padding: 1px;
+  background: #000;
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: center;
+  line-height: 1em;
+} */
+
+.cirledNumber {
+  background: #000;
+  border-radius: 0.6em;
+  -moz-border-radius: 0.6em;
+  -webkit-border-radius: 0.7em;
+  color: #fff;
+  display: inline-block;
+  line-height: 1.2em;
+  font-size: 0.7em;
+  border: 2px solid #fff;
+  text-align: center;
+  width: 1.4em;
+}

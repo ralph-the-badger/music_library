@@ -1,1 +1,32 @@
-[{"title":"k","episodeNr":"s","img":"c"},{"title":"l","episodeNr":"a","img":"la"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"},{"title":"a","episodeNr":"da","img":"c"}]
+[
+  {
+    "title": "und der Super-Papagei",
+    "episodeNr": "1",
+    "img": "https://m.media-amazon.com/images/I/71mPk0mRqeL._SS500_.jpg"
+  },
+  {
+    "title": "und der Phantomsee",
+    "episodeNr": "2",
+    "img": "https://m.media-amazon.com/images/I/71oAenVdTcL._SS500_.jpg"
+  },
+  {
+    "title": "und der Karpatenhund",
+    "episodeNr": "3",
+    "img": "https://m.media-amazon.com/images/I/71LKDe6f82L._SS500_.jpg"
+  },
+  {
+    "title": "und die schwarze Katze",
+    "episodeNr": "4",
+    "img": "https://m.media-amazon.com/images/I/71AW6m461TL._SS500_.jpg"
+  },
+  {
+    "title": "und der Fluch des Rubins",
+    "episodeNr": "5",
+    "img": "https://m.media-amazon.com/images/I/71t2Vjbm2fL._SS500_.jpg"
+  },
+  {
+    "title": "und der sprechende Totenkopf",
+    "episodeNr": "6",
+    "img": "https://m.media-amazon.com/images/I/81CpJrDva8L._SS500_.jpg"
+  }
+]

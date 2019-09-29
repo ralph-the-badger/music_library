@@ -1,0 +1,48 @@
+<%- include("./includes/head.ejs") %>
+
+<body>
+  <%- include("./includes/navigation.ejs") %>
+  <main>
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%= pageTitle %></h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <% if (ep.length > 0) { %>
+          <% ep.forEach(item => { %>
+            <div class="col-md-4 singleEpisode">
+              <div class="episodeTitle">
+                <div class="episodeNr">
+                  <h2><span class="cirledNumber"><%= item.episodeNr %></span> Die drei ??? <%= item.title %></h2>
+                </div> 
+              </div>
+              <div class="episodeImg">
+              <img src="<%= item.img %>" alt="Die drei ??? <%= item.title %>" width="100%" />
+              </div>
+            </div>  
+          <% }); %>
+        <% } else { %>
+          <div class="col-md-12"></div>
+            <h2>keine Daten</h2>
+          </div>  
+        <% } %>
+      </div> 
+    </div>
+  </main>
+
+
+
+
+
+
+
+  
+  
+
+  
+</body>
+
+</html>

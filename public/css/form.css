@@ -3,3 +3,9 @@
   align-items: center;
   flex-direction: column;
 }
+
+.addEpisodeForm label,
+.addEpisodeForm button {
+  margin-top: 5%;
+  display: flex;
+}

@@ -59,8 +59,9 @@ module.exports = class Episode {
     const updatedContent = await read();
     // console.log(updatedContent);
   }
-  async fetchData() {
-    await read();
+  static async fetchData() {
+    const content = await read();
+    return content;
   }
   // static async run() {
   //   const res = await readFile(filePath);

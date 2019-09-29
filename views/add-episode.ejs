@@ -4,10 +4,15 @@
 
   <body>
     <%- include("./includes/navigation.ejs") %>
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%= pageTitle %></h1>
+      </div>
+    </div>
     <div class="container">
       <div class="form-container row m-auto">
-        <h1>Neue Folge hinzufügen</h1>
-        <form action="/neue-folge" method="post">
+        <h2>Neue Folge hinzufügen</h2>
+        <form class="addEpisodeForm" action="/neue-folge" method="post">
           <label for="episodeTitle">Albumtitel</label>
           <input type="text" name="episodeTitle" id="episodeTitle">
           <label for="episodeNumber">Folge</label>
