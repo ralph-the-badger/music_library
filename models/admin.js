@@ -42,6 +42,7 @@ module.exports = class Episode {
     this.img = epImg;
   }
   async save() {
+    this.id = Math.floor(Math.random() * 1000).toString();
     // awaiting promise to resolve read data
     const originalContent = await read();
     // console.log(originalContent);

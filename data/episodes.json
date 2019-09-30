@@ -1,32 +1,56 @@
 [
   {
-    "title": "und der Super-Papagei",
+    "title": "Die drei ??? und der Super-Papagei",
     "episodeNr": "1",
-    "img": "https://m.media-amazon.com/images/I/71mPk0mRqeL._SS500_.jpg"
+    "img": "https://m.media-amazon.com/images/I/71mPk0mRqeL._SS500_.jpg",
+    "id": "123"
   },
   {
-    "title": "und der Phantomsee",
+    "title": "Die drei ??? und der Phantomsee",
     "episodeNr": "2",
-    "img": "https://m.media-amazon.com/images/I/71oAenVdTcL._SS500_.jpg"
+    "img": "https://m.media-amazon.com/images/I/71oAenVdTcL._SS500_.jpg",
+    "id": "399"
   },
   {
-    "title": "und der Karpatenhund",
+    "title": "Die drei ??? und der Karpatenhund",
     "episodeNr": "3",
-    "img": "https://m.media-amazon.com/images/I/71LKDe6f82L._SS500_.jpg"
+    "img": "https://m.media-amazon.com/images/I/71LKDe6f82L._SS500_.jpg",
+    "id": "394"
   },
   {
-    "title": "und die schwarze Katze",
+    "title": "Die drei ??? und die schwarze Katze",
     "episodeNr": "4",
-    "img": "https://m.media-amazon.com/images/I/71AW6m461TL._SS500_.jpg"
+    "img": "https://m.media-amazon.com/images/I/71AW6m461TL._SS500_.jpg",
+    "id": "222"
   },
   {
-    "title": "und der Fluch des Rubins",
+    "title": "Die drei ??? und der Fluch des Rubins",
     "episodeNr": "5",
-    "img": "https://m.media-amazon.com/images/I/71t2Vjbm2fL._SS500_.jpg"
+    "img": "https://m.media-amazon.com/images/I/71t2Vjbm2fL._SS500_.jpg",
+    "id": "245"
   },
   {
-    "title": "und der sprechende Totenkopf",
+    "title": "Die drei ??? und der sprechende Totenkopf",
     "episodeNr": "6",
-    "img": "https://m.media-amazon.com/images/I/81CpJrDva8L._SS500_.jpg"
+    "img": "https://m.media-amazon.com/images/I/81CpJrDva8L._SS500_.jpg",
+    "id": "587"
+  },
+  {
+    "title": "Die drei ??? und der unheimliche Drache",
+    "episodeNr": "7",
+    "img": "https://m.media-amazon.com/images/I/712ujFDguIL._SS500_.jpg",
+    "id": "374"
+  },
+  {
+    "title": "Die drei ??? und der grüne Geist",
+    "episodeNr": "8",
+    "img": "https://m.media-amazon.com/images/I/71W9h7t0s2L._SS500_.jpg",
+    "id": "200"
+  },
+  {
+    "title": "Die drei ??? und die rätselhaften Bilder",
+    "episodeNr": "9",
+    "img": "https://m.media-amazon.com/images/I/713SrTFAJ7L._SS500_.jpg",
+    "id": "462"
   }
 ]

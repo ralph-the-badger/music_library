@@ -16,11 +16,11 @@
             <div class="col-md-4 singleEpisode">
               <div class="episodeTitle">
                 <div class="episodeNr">
-                  <h2><span class="cirledNumber"><%= item.episodeNr %></span> Die drei ??? <%= item.title %></h2>
+                  <h2><span class="cirledNumber"><%= item.episodeNr %></span> <%= item.title %></h2>
                 </div> 
               </div>
               <div class="episodeImg">
-              <img src="<%= item.img %>" alt="Die drei ??? <%= item.title %>" width="100%" />
+              <img src="<%= item.img %>" alt="<%= item.title %>" width="100%" />
               </div>
             </div>  
           <% }); %>

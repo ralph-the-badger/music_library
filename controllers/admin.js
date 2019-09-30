@@ -34,7 +34,7 @@ exports.postAddEpisode = (req, res, next) => {
   const episodeImage = req.body.episodeImage;
   const episode = new Episode(episodeTitle, episodeNumber, episodeImage);
   episode.save();
-  res.redirect("/");
+  res.redirect("/overview");
 };
 
 exports.renderEpisodes = (req, res, next) => {
