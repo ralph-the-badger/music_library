@@ -20,7 +20,10 @@
                 </div> 
               </div>
               <div class="episodeImg">
-              <img src="<%= item.img %>" alt="<%= item.title %>" width="100%" />
+                <img src="<%= item.img %>" alt="<%= item.title %>" width="100%" />
+              </div>
+              <div class="episodeButtons">
+                <a class="btn detail-button" href="/overview/<%= item.id %>">Detail</a>
               </div>
             </div>  
           <% }); %>

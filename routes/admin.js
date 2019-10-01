@@ -9,6 +9,8 @@ const router = express.Router();
 
 router.get("/overview", adminController.getOverview);
 
+router.get("/overview/:episodeId", adminController.getEpidodeDetails);
+
 // use router functionality to render /folge-hinzufuegen page
 router.get("/folge-hinzufuegen", adminController.getAddEpisode);
 

@@ -46,3 +46,5 @@ exports.renderEpisodes = (req, res, next) => {
     });
   });
 };
+
+exports.getEpidodeDetails = (req, res, next) => {};
