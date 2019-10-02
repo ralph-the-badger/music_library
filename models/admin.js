@@ -69,9 +69,10 @@ module.exports = class Episode {
     const content = await read();
     return content;
   }
-  static async findEpisodeById(id, cb) {
-    const fileContent = await read();
-    const content = fileContent.find(r => r.id === id);
+  static async findEpisodeById(id) {
+    const readFile = await read();
+    const readyFile = [...readFile];
+    const content = readyFile.find(ep => ep.id == id);
     return content;
   }
 };

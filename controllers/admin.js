@@ -48,11 +48,11 @@ exports.renderEpisodes = (req, res, next) => {
 };
 
 exports.getEpidodeDetails = (req, res, next) => {
-  const epId = req.body.id;
-  Episode.findEpisodeById(epId).then(content => {
+  const epId = req.params.episodeId;
+  Episode.findEpisodeById(epId).then(details => {
     res.render("../views/episode-details.ejs", {
-      content: content,
-      pageTitle: "Folge",
+      content: details,
+      pageTitle: `Folge ${details.episodeNr}: ${details.title}`,
       path: "/overview"
     });
   });
