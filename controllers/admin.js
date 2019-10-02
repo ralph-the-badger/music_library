@@ -47,4 +47,13 @@ exports.renderEpisodes = (req, res, next) => {
   });
 };
 
-exports.getEpidodeDetails = (req, res, next) => {};
+exports.getEpidodeDetails = (req, res, next) => {
+  const epId = req.body.id;
+  Episode.findEpisodeById(epId).then(content => {
+    res.render("../views/episode-details.ejs", {
+      content: content,
+      pageTitle: "Folge",
+      path: "/overview"
+    });
+  });
+};

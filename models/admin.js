@@ -34,6 +34,11 @@ function write(fileContent) {
   });
 }
 
+// function findEpisodeById(id) {
+//   return new Promise((resolve, reject) => {});
+
+// }
+
 // define Episode model
 module.exports = class Episode {
   constructor(epTitle, epNr, epImg) {
@@ -64,57 +69,9 @@ module.exports = class Episode {
     const content = await read();
     return content;
   }
-  // static async run() {
-  //   const res = await readFile(filePath);
-  //   return res;
-  // }
+  static async findEpisodeById(id, cb) {
+    const fileContent = await read();
+    const content = fileContent.find(r => r.id === id);
+    return content;
+  }
 };
-
-// neue Asynchrone Funktion
-// async function readData() {
-//   const blabla = await readMyFile();
-//   console.log("meine Daten: " + blabla);
-// }
-
-// function readMyFile() {
-//   return new Promise((resolve, reject) => {
-//     let test = "Hier könnte auch Ihre Werbung stehen!";
-//     // let test = fs.readFile(filePath, (err, fileContent) => {
-//     //   if (err) {
-//     //     console.log("Error reading file from disk:", err);
-//     //     return;
-//     //   } else {
-//     //     return JSON.parse(fileContent);
-//     //     console.log("Episode:", episode);
-//     //   }
-//     // });
-//     resolve(test);
-//   });
-// }
-
-// const ralph = readData();
-
-// console.log(ralph);
-
-// const readFile = (filePath, opts = "utf8") =>
-//   new Promise((resolve, reject) => {
-//     fs.readFile(filePath, opts, (err, data) => {
-//       if (err) reject(err);
-//       else resolve(data);
-//     });
-//   });
-
-// // const writeFile = (path, data, opts = 'utf8') =>
-// //   new Promise((resolve, reject) => {
-// //     fs.writeFile(path, data, opts, (err) => {
-// //       if (err) reject(err)
-// //       else resolve()
-// //     })
-// //   })
-
-// const write = async () => {
-//   const res = await readFile(filePath);
-//   console.log(res);
-// };
-
-// run();
