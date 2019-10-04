@@ -23,7 +23,8 @@
                 <img src="<%= item.img %>" alt="<%= item.title %>" width="100%" />
               </div>
               <div class="episodeButtons">
-                <a class="btn detail-button" href="/overview/<%= item.id %>">Detail</a>
+                <a class="btn detail-button" href="/episode-details/<%= item.id %>">Details</a>
+                <a class="btn edit-button" href="/episode-bearbeiten/<%= item.id %>">Bearbeiten</a>
               </div>
             </div>  
           <% }); %>

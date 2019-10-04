@@ -12,12 +12,9 @@ h2 {
   font-size: 1.75em;
 }
 
-.jumbotron {
-  background-color: #000;
-}
-
-.row {
-  margin: 5% 0;
+p {
+  font-size: 18px;
+  line-height: 27px;
 }
 
 a {
@@ -27,4 +24,12 @@ a {
 
 a:hover {
   color: #06aeec; /* #D0231B */
+}
+
+.jumbotron {
+  background-color: #000;
+}
+
+.row {
+  margin: 5% 0;
 }

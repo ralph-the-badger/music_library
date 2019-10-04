@@ -1,14 +1,23 @@
 <%- include("./includes/head.ejs") %>
-<link rel="stylesheet" href="/css/form.css">
-</head>
 
 <body>
   <%- include("./includes/navigation.ejs") %>
-  <div class="jumbotron">
+  <main>
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%= pageTitle %></h1>
+      </div>
+    </div>
+
     <div class="container">
-      <h1><%= pageTitle %></h1>
-      <img src="<%= content.img %>" alt="<%= pageTitle %>">
-      <p><%= content.description %></p>
+      <div class="row">
+        <div class="col-md-6 episode-details-image">
+          <img src="<%= content.img %>" alt="<%= pageTitle %>">
+        </div>
+        <div class="col-md-6 episode-details-content">
+          <p><%= content.description %></p>
+        </div>
+      </div>      
     </div>
   </div>
-  
+</body>

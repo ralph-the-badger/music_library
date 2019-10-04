@@ -47,23 +47,31 @@ module.exports = class Episode {
     this.img = epImg;
   }
   async save() {
-    this.id = Math.floor(Math.random() * 1000).toString();
-    // awaiting promise to resolve read data
-    const originalContent = await read();
-    // console.log(originalContent);
+    if (this.id) {
+      const existingContent = await read();
+      const indexofExistingEpisode = existingContent.findIndex(
+        ep => ep.id == this.id
+      );
+      const updateEpisode = [...existingContent];
+      updateEpisode[indexofExistingEpisode] = this;
+      await write(updateEpisode[indexofExistingEpisode]);
+    } else {
+      this.id = Math.floor(Math.random() * 1000).toString();
+      // awaiting promise to resolve read data
+      const originalContent = await read();
 
-    // using spread operator to declare new variable
-    const lala = [...originalContent];
+      // using spread operator to declare new variable
+      const lala = [...originalContent];
 
-    // 'this' refers to the three constructor parameters
-    lala.push(this);
+      // 'this' refers to the three constructor parameters
+      lala.push(this);
 
-    // awaiting promise to resolve written data
-    await write(lala);
+      // awaiting promise to resolve written data
+      await write(lala);
 
-    // awaiting promise to resolve read data
-    const updatedContent = await read();
-    // console.log(updatedContent);
+      // awaiting promise to resolve read data
+      const updatedContent = await read();
+    }
   }
   static async fetchData() {
     const content = await read();

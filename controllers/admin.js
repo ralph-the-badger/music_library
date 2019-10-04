@@ -12,7 +12,7 @@ exports.getHome = (req, res, next) => {
 exports.getOverview = (req, res, next) => {
   epData = Episode.fetchData().then(content => {
     res.render("overview", {
-      pageTitle: "Übericht der ersten Folgen",
+      pageTitle: "Übericht der ersten Episoden",
       path: "/overview",
       ep: content
     });
@@ -22,8 +22,8 @@ exports.getOverview = (req, res, next) => {
 // middleware functionality to render add episode
 exports.getAddEpisode = (req, res, next) => {
   res.render("add-episode", {
-    pageTitle: "Folge hinzufügen",
-    path: "/folge-hinzufuegen"
+    pageTitle: "Episode hinzufügen",
+    path: "/episode-hinzufuegen"
   });
 };
 
@@ -47,13 +47,37 @@ exports.renderEpisodes = (req, res, next) => {
   });
 };
 
-exports.getEpidodeDetails = (req, res, next) => {
+exports.getEpisodeDetails = (req, res, next) => {
   const epId = req.params.episodeId;
   Episode.findEpisodeById(epId).then(details => {
     res.render("../views/episode-details.ejs", {
       content: details,
-      pageTitle: `Folge ${details.episodeNr}: ${details.title}`,
-      path: "/overview"
+      pageTitle: `Episode ${details.episodeNr}: ${details.title}`,
+      path: "/episode-details"
     });
   });
+};
+
+exports.getEditEpisode = (req, res, next) => {
+  const epId = req.params.episodeId;
+  Episode.findEpisodeById(epId).then(details => {
+    res.render("edit-episode", {
+      path: "/episode-bearbeiten",
+      pageTitle: "Episode bearbeiten",
+      content: details
+    });
+  });
+};
+
+exports.postEditEpisode = (req, res, next) => {
+  const updatedEpisodeTitle = req.body.episodeTitle;
+  const updatedEpisodeNumber = req.body.episodeNumber;
+  const updatedEpisodeImage = req.body.episodeImage;
+  const updatedEpisode = new Episode(
+    updatedEpisodeTitle,
+    updatedEpisodeNumber,
+    updatedEpisodeImage
+  );
+  updatedEpisode.save();
+  res.redirect("/overview");
 };

@@ -9,13 +9,19 @@ const router = express.Router();
 
 router.get("/overview", adminController.getOverview);
 
-router.get("/overview/:episodeId", adminController.getEpidodeDetails);
+router.get("/episode-details/:episodeId", adminController.getEpisodeDetails);
 
-// use router functionality to render /folge-hinzufuegen page
-router.get("/folge-hinzufuegen", adminController.getAddEpisode);
+router.get("/episode-bearbeiten/:episodeId", adminController.getEditEpisode);
+
+router.post("/episode-anpassen", adminController.postEditEpisode);
+
+// router.post("/episode-anpassen", adminController.postEditEpisode);
+
+// use router functionality to render /episode-hinzufuegen page
+router.get("/episode-hinzufuegen", adminController.getAddEpisode);
 
 // use router functionality to post data
-router.post("/neue-folge", adminController.postAddEpisode);
+router.post("/neue-episode", adminController.postAddEpisode);
 
 // use router functionality to render home page with new data
 router.get("/", adminController.renderEpisodes);
