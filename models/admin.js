@@ -34,34 +34,29 @@ function write(fileContent) {
   });
 }
 
-// function findEpisodeById(id) {
-//   return new Promise((resolve, reject) => {});
-
-// }
-
 // define Episode model
 module.exports = class Episode {
-  constructor(epTitle, epNr, epImg) {
+  constructor(id, epTitle, epNr, epImg) {
+    this.id = id;
     this.title = epTitle;
     this.episodeNr = epNr;
     this.img = epImg;
   }
   async save() {
+    const existingContent = await read();
     if (this.id) {
-      const existingContent = await read();
-      const indexofExistingEpisode = existingContent.findIndex(
+      const indexOfExistingEpisode = existingContent.findIndex(
         ep => ep.id == this.id
       );
       const updateEpisode = [...existingContent];
-      updateEpisode[indexofExistingEpisode] = this;
-      await write(updateEpisode[indexofExistingEpisode]);
+      updateEpisode[indexOfExistingEpisode] = this;
+      await write(updateEpisode);
     } else {
       this.id = Math.floor(Math.random() * 1000).toString();
       // awaiting promise to resolve read data
-      const originalContent = await read();
 
       // using spread operator to declare new variable
-      const lala = [...originalContent];
+      const lala = [...existingContent];
 
       // 'this' refers to the three constructor parameters
       lala.push(this);

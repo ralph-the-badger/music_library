@@ -32,7 +32,7 @@ exports.postAddEpisode = (req, res, next) => {
   const episodeTitle = req.body.episodeTitle;
   const episodeNumber = req.body.episodeNumber;
   const episodeImage = req.body.episodeImage;
-  const episode = new Episode(episodeTitle, episodeNumber, episodeImage);
+  const episode = new Episode(null, episodeTitle, episodeNumber, episodeImage);
   episode.save();
   res.redirect("/overview");
 };
@@ -70,10 +70,12 @@ exports.getEditEpisode = (req, res, next) => {
 };
 
 exports.postEditEpisode = (req, res, next) => {
+  const updatedEpisodeId = req.body.episodeId;
   const updatedEpisodeTitle = req.body.episodeTitle;
   const updatedEpisodeNumber = req.body.episodeNumber;
   const updatedEpisodeImage = req.body.episodeImage;
   const updatedEpisode = new Episode(
+    updatedEpisodeId,
     updatedEpisodeTitle,
     updatedEpisodeNumber,
     updatedEpisodeImage

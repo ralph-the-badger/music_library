@@ -11,16 +11,20 @@
   </div>
   <div class="container">
     <div class="form-container row m-auto">
-      <h2>Episode bearbeiten</h2>
-      <form class="addEpisodeForm" action="/episode-anpassen" method="post">
-        <label for="episodeTitle">Albumtitel</label>
-        <input type="text" name="episodeTitle" id="episodeTitle" value="<%= content.title %>">
-        <label for="episodeNumber">Episode</label>
-        <input type="text" name="episodeNumber" id="episodeNumber" value="<%= content.episodeNr %>">
-        <label for="episodeImage">Titelbild</label>
-        <input type="text" name="episodeImage" id="episodeImage"value="<%= content.img %>">
-        <button type="submit" class="btn btn-dark">Episode speichern</button>
-      </form>
+      <div class="col-md-2"></div>
+      <div class="col-md-6">
+        <h2>Episode bearbeiten</h2>
+        <form class="addEpisodeForm" action="/episode-anpassen" method="post">
+          <label for="episodeTitle">Albumtitel</label>
+          <input type="text" name="episodeTitle" id="episodeTitle" value="<%= content.title %>">
+          <label for="episodeNumber">Episode</label>
+          <input type="text" name="episodeNumber" id="episodeNumber" value="<%= content.episodeNr %>">
+          <label for="episodeImage">Titelbild</label>
+          <input type="text" name="episodeImage" id="episodeImage"value="<%= content.img %>">
+          <input type="hidden" value="<%= content.id %>" name="episodeId">
+          <button type="submit" class="btn btn-dark">Episode speichern</button>
+        </form>
+      <div class="col-md-2"></div>
     </div>
   </div>
 </body>

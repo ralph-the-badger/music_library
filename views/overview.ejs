@@ -20,7 +20,7 @@
                 </div> 
               </div>
               <div class="episodeImg">
-                <img src="<%= item.img %>" alt="<%= item.title %>" width="100%" />
+                <a href="/episode-details/<%= item.id %>"><img src="<%= item.img %>" alt="<%= item.title %>" width="100%" /></a>
               </div>
               <div class="episodeButtons">
                 <a class="btn detail-button" href="/episode-details/<%= item.id %>">Details</a>
