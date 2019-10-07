@@ -25,6 +25,10 @@
               <div class="episodeButtons">
                 <a class="btn detail-button" href="/episode-details/<%= item.id %>">Details</a>
                 <a class="btn edit-button" href="/episode-bearbeiten/<%= item.id %>">Bearbeiten</a>
+                <form action="/episode-entfernen" method="post">
+                  <input type="hidden" name="episodeId" value="<%= item.id %>">
+                  <button type="submit" class="btn delete-button">Entfernen</button>
+                </form>
               </div>
             </div>  
           <% }); %>

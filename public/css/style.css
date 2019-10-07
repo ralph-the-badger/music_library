@@ -33,3 +33,25 @@ a:hover {
 .row {
   margin: 5% 0;
 }
+
+.episodeButtons {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  background-color: #fff;
+  color: #000;
+  margin: 5px;
+}
+
+.btn:hover {
+  background-color: #06aeec;
+  color: #000;
+}
+
+.delete-button:hover {
+  background-color: #d0231b;
+  color: #fff;
+}

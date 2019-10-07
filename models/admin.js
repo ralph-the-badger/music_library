@@ -78,4 +78,11 @@ module.exports = class Episode {
     const content = readyFile.find(ep => ep.id == id);
     return content;
   }
+  static async deleteEpisodeById(id) {
+    const readFile = await read();
+    const readyFile = [...readFile];
+    const content = await readyFile.find(ep => ep.id == id);
+    const updatedContent = await readyFile.filter(ep => ep.id !== content.id);
+    await write(updatedContent);
+  }
 };

@@ -83,3 +83,12 @@ exports.postEditEpisode = (req, res, next) => {
   updatedEpisode.save();
   res.redirect("/overview");
 };
+
+exports.postDeleteEpisode = (req, res, next) => {
+  const episodeId = req.body.episodeId;
+  Episode.deleteEpisodeById(episodeId)
+    .then(() => {
+      res.redirect("/overview");
+    })
+    .catch(err => console.log(err));
+};

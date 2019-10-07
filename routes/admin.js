@@ -17,6 +17,8 @@ router.post("/episode-anpassen", adminController.postEditEpisode);
 
 // router.post("/episode-anpassen", adminController.postEditEpisode);
 
+router.post("/episode-entfernen", adminController.postDeleteEpisode);
+
 // use router functionality to render /episode-hinzufuegen page
 router.get("/episode-hinzufuegen", adminController.getAddEpisode);
 
