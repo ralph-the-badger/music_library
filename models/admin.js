@@ -36,11 +36,12 @@ function write(fileContent) {
 
 // define Episode model
 module.exports = class Episode {
-  constructor(id, epTitle, epNr, epImg) {
+  constructor(id, epTitle, epNr, epImg, epDescription) {
     this.id = id;
     this.title = epTitle;
     this.episodeNr = epNr;
     this.img = epImg;
+    this.description = epDescription;
   }
   async save() {
     const existingContent = await read();
