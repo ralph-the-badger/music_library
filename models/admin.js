@@ -58,6 +58,7 @@ module.exports = class Episode {
 
       // using spread operator to declare new variable
       const lala = [...existingContent];
+      console.log(lala);
 
       // 'this' refers to the three constructor parameters
       lala.push(this);
